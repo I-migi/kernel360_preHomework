@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/kernel306_PreProject.iml" filepath="$PROJECT_DIR$/.idea/kernel306_PreProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rest-api.main.iml" />
     </modules>
   </component>
 </project>
