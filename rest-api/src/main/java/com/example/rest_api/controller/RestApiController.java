@@ -2,8 +2,10 @@ package com.example.rest_api.controller;
 
 
 import com.example.rest_api.model.BookQueryParam;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RestController
 @RequestMapping("/api")
 public class RestApiController {
@@ -52,6 +54,11 @@ public class RestApiController {
     
     //Parameter 2가지를 int를 받은후 두 수의 덧셈, 곱셈
 
-
+    @DeleteMapping(path = {
+                    "/user/{userName}/delete",
+                    "/user/{userName}/del"})
+    public void delete(@PathVariable String userName){
+        log.info("user-name: {}",userName);
+    }
 
 }
