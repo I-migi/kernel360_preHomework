@@ -1,16 +1,14 @@
 package com.example.memorydb.user.model;
 
 import com.example.memorydb.entity.Entity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class UserEntity extends Entity {
     private String name;
-    private String email;
+    private int score;
 }

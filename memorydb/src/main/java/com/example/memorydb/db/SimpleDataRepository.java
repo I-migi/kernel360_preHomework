@@ -28,7 +28,7 @@ abstract public class SimpleDataRepository<T extends Entity,ID extends Long> imp
                         })
                                 .findFirst();
         if(prevData.isPresent()){
-            dataList.remove(prevData);
+            dataList.remove(prevData.get());
             dataList.add(data);
         }else{
             index++;
@@ -58,7 +58,7 @@ abstract public class SimpleDataRepository<T extends Entity,ID extends Long> imp
         }).findFirst();
 
         if(deleteEntity.isPresent()){
-            dataList.remove(deleteEntity);
+            dataList.remove(deleteEntity.get());
         }
     }
 }
