@@ -1,7 +1,7 @@
 version: "3"
 services:
   db:
-    image: mysql:8.0.26
+    image: mysql:8.0.38
     restart: always
     command:
       - --lower_case_table_names=1
@@ -10,10 +10,10 @@ services:
 
     container_name: mysql
     ports:
-      - "3307:3306"
+      - "3306:3306"
     environment:
       - MYSQL_DATABASE=mydb
-      - MYSQL_ROOT_PASSWORD=root1234!!
+      - MYSQL_ROOT_PASSWORD=1234
       - TZ=Asia/Seoul
     volumes:
       - C:\Temp\MYSQL:/var/lib/mysql
