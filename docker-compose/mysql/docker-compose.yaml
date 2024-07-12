@@ -10,7 +10,7 @@ services:
 
     container_name: mysql
     ports:
-      - "3307:3306"
+      - "3307:3307"
     environment:
       - MYSQL_DATABASE=mydb
       - MYSQL_ROOT_PASSWORD=root1234!!
