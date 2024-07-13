@@ -6,7 +6,9 @@
     <file type="web" url="file://$PROJECT_DIR$/hello-springboot" />
     <file type="web" url="file://$PROJECT_DIR$/hello-world" />
     <file type="web" url="file://$PROJECT_DIR$/jpa" />
+    <file type="web" url="file://$PROJECT_DIR$/memorydb" />
     <file type="web" url="file://$PROJECT_DIR$/rest-api" />
+    <file type="web" url="file://$PROJECT_DIR$/validation" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
