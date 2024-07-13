@@ -1,5 +1,7 @@
-package com.example.memorydb.book.service;
+package com.example.demo.book.service;
 
+import com.example.demo.book.db.entity.BookEntity;
+import com.example.demo.book.db.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

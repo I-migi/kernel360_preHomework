@@ -1,8 +1,7 @@
-package com.example.memorydb.book.controller;
+package com.example.demo.book.controller;
 
-
-import com.example.memorydb.book.db.entity.BookEntity;
-import com.example.memorydb.book.service.BookService;
+import com.example.demo.book.db.entity.BookEntity;
+import com.example.demo.book.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,16 +19,14 @@ public class BookApiController {
     public BookEntity create(
         @RequestBody BookEntity bookEntity
     ){
-        return null;
-        //return bookService.create(bookEntity);
+        return bookService.create(bookEntity);
     }
 
     @GetMapping("/all")
     public List<BookEntity> findAll(
 
     ){
-        return null;
-        //return bookService.findAll();
+        return bookService.findAll();
     }
 
 }
