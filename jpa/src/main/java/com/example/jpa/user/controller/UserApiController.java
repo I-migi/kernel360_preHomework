@@ -2,7 +2,6 @@ package com.example.jpa.user.controller;
 
 import com.example.jpa.user.db.UserEntity;
 import com.example.jpa.user.db.UserRepository;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
