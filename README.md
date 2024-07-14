@@ -66,7 +66,77 @@ validation
     - 주로 RESTful 웹 서비스를 제공하기 위한 컨트롤러.
     - JSON, XML 등 데이터를 직접 HTTP 응답 본문에 반환.
     - `@ResponseBody`가 자동으로 적용됨.
-
 @OneToMany( // JPA 어노테이션으로, 일대다 관계를 나타냅니다. 하나의 BoardEntity가 여러 PostEntity를 가질 수 있습니다.
 mappedBy = "boardEntity" // 관계의 주인이 아님을 나타내며, 외래 키는 PostEntity에 있습니다.
+
 )
+
+- **타입 추론 가능해야 함**:
+`var`를 사용할 때 컴파일러가 타입을 명확히 추론할 수 있어야 합니다. 초기화 없이 변수를 선언할 수 없습니다.
+    
+    ```java
+    java코드 복사
+    var number; // 컴파일 오류: 타입을 추론할 수 없음
+    number = 10;
+    
+    ```
+    
+- **로컬 변수에만 사용 가능**:
+클래스 필드, 메소드 매개변수, 리턴 타입으로 사용할 수 없습니다.
+    
+    ```java
+    java코드 복사
+    public class Example {
+        private var field; // 컴파일 오류: 클래스 필드에는 사용 불가
+    
+        public void method(var param) { // 컴파일 오류: 메소드 매개변수에는 사용 불가
+        }
+    
+        public var method() { // 컴파일 오류: 리턴 타입으로 사용 불가
+            return "Hello";
+        }
+    }
+    
+    ```
+    
+- **명확한 타입 추론**:
+`var`를 사용할 때는 타입이 명확히 추론되는 경우에만 사용해야 합니다.
+    
+    ```java
+    java코드 복사
+    var list = new ArrayList<>(); // 컴파일러는 ArrayList<Object>로 추론
+    list.add("Hello");
+    list.add(10); // 문제가 될 수 있음
+    
+    ```
+    
+
+`var`는 코드의 가독성을 높이고, 반복되는 타입 선언을 줄여줍니다. 하지만, 코드의 명확성을 유지하기 위해서는 타입 추론이 명확한 경우에만 사용하는 것이 좋습니다. 복잡한 타입을 추론할 때는 오히려 가독성이 떨어질 수 있으므로 주의해야 합니다.
+
+`@JoinColumn`은 JPA(Java Persistence API)에서 사용되는 어노테이션으로, 엔티티 간의 관계를 정의할 때 사용됩니다. 주로 외래 키(Foreign Key)를 지정하기 위해 사용됩니다. `@JoinColumn` 어노테이션은 데이터베이스 테이블에서 두 테이블 간의 조인을 정의하는 데 필요한 정보를 제공합니다.
+`@JoinColumn`은 보통 `@ManyToOne`, `@OneToOne`, `@OneToMany`, `@ManyToMany`와 같은 관계 어노테이션과 함께 사용됩니다.
+
+외래 키(Foreign Key)는 데이터베이스에서 두 테이블 간의 관계를 정의하는 키입니다. 외래 키는 한 테이블의 컬럼이 다른 테이블의 기본 키(Primary Key)를 참조하도록 설정됩니다. 이를 통해 두 테이블 간의 연결을 만들고 데이터 무결성을 유지합니다.
+
+### 예제 설명
+
+두 개의 테이블, `Board`와 `Post`가 있다고 가정해봅시다. 각 테이블은 다음과 같은 구조를 가집니다.
+
+### Board 테이블
+
+| id | board_name |
+| --- | --- |
+| 1 | General |
+| 2 | News |
+| 3 | Sports |
+
+### Post 테이블
+
+| id | title | board_id |
+| --- | --- | --- |
+| 1 | Hello World | 1 |
+| 2 | Java News | 2 |
+| 3 | Sports News | 3 |
+
+위의 `Post` 테이블에서 `board_id` 컬럼이 `Board` 테이블의 `id` 컬럼을 참조하는 외래 키입니다. 이를 통해 `Post` 테이블의 각 행이 어떤 `Board`에 속하는지를 나타낼 수 있습니다.
+
