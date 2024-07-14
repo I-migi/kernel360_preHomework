@@ -1,6 +1,6 @@
 package com.example.simpleboard.post.controller;
 
-import com.example.simpleboard.board.db.BoardRepository;
+
 import com.example.simpleboard.common.Api;
 import com.example.simpleboard.post.db.PostEntity;
 import com.example.simpleboard.post.model.PostRequest;

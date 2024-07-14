@@ -2,11 +2,11 @@ package com.example.simpleboard.board.db;
 
 import com.example.simpleboard.post.db.PostEntity;
 import lombok.*;
-import org.hibernate.annotations.BatchSize;
+
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
+
 import java.util.List;
 
 @Getter

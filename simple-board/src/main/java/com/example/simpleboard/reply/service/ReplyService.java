@@ -1,6 +1,6 @@
 package com.example.simpleboard.reply.service;
 
-import com.example.simpleboard.post.db.PostEntity;
+
 import com.example.simpleboard.post.db.PostRepository;
 import com.example.simpleboard.reply.db.ReplyEntity;
 import com.example.simpleboard.reply.db.ReplyRepository;

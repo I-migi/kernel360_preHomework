@@ -1,12 +1,11 @@
 package com.example.simpleboard.post.model;
 
-import com.example.simpleboard.board.db.BoardEntity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.*;
 
-import javax.persistence.*;
+
 import java.time.LocalDateTime;
 
 @Getter
