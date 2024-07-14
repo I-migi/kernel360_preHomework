@@ -20,13 +20,9 @@ public class YearMonthValidator implements ConstraintValidator<YearMonth, String
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        // "2023-01-01T13:00:00" yyyy-MM-ddTHH:mm:ss
-        // "2023-01"
-        // size = 6
-
-        // yyyy MM dd
 
         var reValue = value+"01";
+
         var rePattern = pattern+"dd";
 
         try{
